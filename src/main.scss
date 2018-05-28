@@ -1,0 +1,24 @@
+$theme-colors: (
+        "primary": #00BCD4
+);
+
+//noinspection CssUnknownTarget
+@import 'bootstrap/scss/bootstrap';
+
+body {
+  background-color: #fafafa;
+}
+
+.flex-1 {
+  flex: 1 1 auto;
+}
+
+.container-fluid {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.row-nowrap {
+  display: flex;
+  flex-flow: row nowrap;
+}

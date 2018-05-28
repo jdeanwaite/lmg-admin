@@ -1,0 +1,19 @@
+.SideBar {
+  background-color: #fff;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  width: 256px;
+
+  .nav .nav-link {
+    color: rgba(0, 0, 0, 0.87);
+  }
+
+  .nav > li > a.active {
+    //background-color: color("yellow") !important;
+    color: rgba(0, 0, 0, 0.87) !important;
+    font-weight: bold;
+  }
+
+  .nav > li > a.active:hover {
+    color: rgba(0, 0, 0, 1) !important;
+  }
+}
