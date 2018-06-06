@@ -4,6 +4,7 @@ import AllLessonsQuery from "../../queries/AllLessonsQuery";
 import { Button, Table } from "reactstrap";
 import "./PrinciplesPage.css";
 import NewPrincipleModal from "./NewPrincipleModal";
+import { Link } from 'react-router-dom'
 
 class PrinciplesPage extends Component {
   render() {
@@ -11,7 +12,7 @@ class PrinciplesPage extends Component {
       <div className="PrinciplesPage">
         <Query query={AllLessonsQuery} fetchPolicy="cache-and-network">
           {({ loading, error, data }) => {
-            if (loading) {
+            if (loading && (!data || !data.allLessons)) {
               return <p>Loading...</p>;
             } else if (error) {
               console.log("error", error);
@@ -32,24 +33,24 @@ class PrinciplesPage extends Component {
                   <NewPrincipleModal
                     ref={ref => (this.newPrincipleModal = ref)}
                   />
-                  <div className="custom-header">
+                  <div className="table-header">
                     <h1>Principles</h1>
                     <Button color="primary" onClick={this.onNewClicked}>
                       New
                     </Button>
                   </div>
-                  <Table hover responsive bordered>
+                  <Table bordered responsive>
                     <thead>
                       <tr>
-                        <th>Lesson</th>
                         <th>Principle</th>
+                        <th>Lesson</th>
                       </tr>
                     </thead>
                     <tbody>
                       {principles.map(principle => (
                         <tr key={principle.id}>
-                          <td>{principle.lesson}</td>
-                          <td>{principle.name}</td>
+                          <td><Link to={"principles/" + principle.id}>{principle.name}</Link></td>
+                          <td><Link to="#">{principle.lesson}</Link></td>
                         </tr>
                       ))}
                     </tbody>

@@ -13,6 +13,7 @@ export default class SideBar extends Component {
           {/*<NavItem>*/}
           {/*<NavLink active={pathname === '/admin/dashboard'} href="/admin/dashboard">Dashboard</NavLink>*/}
           {/*</NavItem>*/}
+          <h1>Admin</h1>
           <NavItem>
             <NavLink tag={Link} active={pathname === '/admin/lessons'} to="/admin/lessons">Lessons</NavLink>
           </NavItem>

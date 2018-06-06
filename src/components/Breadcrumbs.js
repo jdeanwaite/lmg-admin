@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Breadcrumb, BreadcrumbItem } from 'reactstrap'
+import { Link } from 'react-router-dom'
 
 export default class Breadcrumbs extends Component {
   render () {
@@ -12,7 +13,7 @@ export default class Breadcrumbs extends Component {
         for (let i = 0; i <= index; i++) {
           link += `/${array[i]}`
         }
-        return <BreadcrumbItem key={page}><a href={link}>{page}</a></BreadcrumbItem>
+        return <BreadcrumbItem key={page}><Link to={link}>{page}</Link></BreadcrumbItem>
       })
     return (
       <div>

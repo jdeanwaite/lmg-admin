@@ -22,3 +22,23 @@ body {
   display: flex;
   flex-flow: row nowrap;
 }
+
+
+table.table {
+  background-color: #fff;
+}
+
+.table-header {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  background-color: #fafafa;
+
+  h1 {
+    font-size: 24px;
+    margin: 0;
+    padding: 0;
+  }
+}
