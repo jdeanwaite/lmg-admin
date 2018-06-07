@@ -2,13 +2,12 @@ import React, { Component } from "react";
 import "./App.css";
 import { BrowserRouter, Redirect, Route } from "react-router-dom";
 import Admin from "./pages/admin/Admin";
-import Amplify, { Auth } from "aws-amplify";
-import { withAuthenticator } from "aws-amplify-react";
-import AWSAppSyncClient from "aws-appsync";
-import AppSync from "./AppSync";
+import Amplify from "aws-amplify";
 import { ApolloProvider } from "react-apollo";
+import { withAuthenticator } from "aws-amplify-react";
 import { Rehydrated } from "aws-appsync-react";
-import NavBar from './components/NavBar'
+import NavBar from "./components/NavBar";
+import client from './config/app-sync';
 
 // Amplify.Logger.LOG_LEVEL = 'DEBUG'
 
@@ -27,27 +26,16 @@ Amplify.configure({
   }
 });
 
-const client = new AWSAppSyncClient({
-  url: AppSync.graphqlEndpoint,
-  region: AppSync.region,
-  auth: {
-    type: AppSync.authenticationType,
-    // credentials: () => {
-    //   console.log("returning creds");
-    //   return Auth.currentCredentials();
-    // },
-    jwtToken: async () => {
-      return (await Auth.currentSession()).getIdToken().getJwtToken();
-    }
-  }
-});
-
 class App extends Component {
   render() {
     return (
       <div className="App">
         <NavBar onStateChange={this.props.onStateChange} />
-        <Route path="/" exact render={() => <Redirect from="/" to="/admin" />} />
+        <Route
+          path="/"
+          exact
+          render={() => <Redirect from="/" to="/admin" />}
+        />
         <Route
           path="/admin"
           render={props => (

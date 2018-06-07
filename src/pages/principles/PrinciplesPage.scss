@@ -1,3 +1,66 @@
 .PrinciplesPage {
+  display: flex;
+  flex-flow: column nowrap;
+  height: 100%;
+  align-items: stretch;
 
+  .PrinciplesPageInnerContainer {
+    display: flex;
+    flex-flow: row nowrap;
+    height: 100%;
+  }
+
+
+
+  .PrincipleSelector {
+    padding: 16px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: stretch;
+    max-width: 384px;
+    background-color: #fff;
+    border-right: 1px solid rgba(0, 0, 0, .1);
+    height: 100%;
+    flex: 1;
+
+    hr {
+      width: 100%;
+      margin-top: 16px;
+      margin-bottom: 16px;
+    }
+
+    .principle-links {
+      display: flex;
+      flex-flow: column nowrap;
+      a:not(:last-of-type) {
+        margin-bottom: 16px;
+      }
+      a {
+        line-height: 24px;
+        height: 24px;
+        overflow: hidden;
+        white-space: nowrap;
+        -ms-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+      }
+    }
+
+    .order-buttons {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+
+      button {
+        flex: 1;
+      }
+
+      button:not(:last-of-type) {
+        margin-right: 16px;
+      }
+    }
+
+    #lesson-selector {
+      margin-bottom: 16px;
+    }
+  }
 }

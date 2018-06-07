@@ -1,0 +1,19 @@
+.VideoRef {
+  .row-nowrap {
+    align-items: stretch;
+
+    span {
+      width: 75px;
+    }
+
+    .col-nowrap {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-evenly;
+    }
+  }
+
+  .row-nowrap:not(:last-of-type) {
+    margin-bottom: 8px;
+  }
+}

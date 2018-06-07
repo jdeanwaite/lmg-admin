@@ -3,6 +3,10 @@
   display: flex;
   flex-flow: column nowrap;
   height: 100%;
+
+  .NavBar {
+    flex-shrink: 0;
+  }
 }
 
 .App-logo {

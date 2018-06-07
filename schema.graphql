@@ -1,0 +1,101 @@
+enum Gender {
+  male
+  female
+}
+
+type Lesson {
+  id: ID
+  name: String
+  principles: [Principle]
+  activePrinciples: [Principle]
+}
+
+type LessonConnection {
+  items: [Lesson]
+  nextToken: String
+}
+
+type MultipleChoiceOption {
+  id: ID
+  text: String
+}
+
+type Mutation {
+  addPrinciple(name: String!, lessonId: ID): Principle
+  addLesson(name: String!): Lesson
+}
+
+type Principle {
+  id: ID
+  lessonId: ID
+  name: String
+  doctrineMarkdown: String
+  teachingMarkdown: String
+  pointsToTeachMarkdown: String
+  videoRefs: [VideoRef]
+  scriptureGroups: [ScriptureGroup]
+  reflectPrompts: [String]
+}
+
+type PrincipleStatus {
+  principleId: String
+  health: Int
+}
+
+type Query {
+  allLessons: [Lesson]
+  getLesson(id: ID!): Lesson
+  listLessons(first: Int, after: String): LessonConnection
+}
+
+type Quiz {
+  questions: [QuizQuestion]
+}
+
+type QuizQuestion {
+  type: String
+  question: String
+  options: [MultipleChoiceOption]
+  correctAnswerId: ID
+}
+
+type RenderableText {
+  markdown: String
+}
+
+type Scripture {
+  displayText: String
+  book: String
+  subBook: String
+  chapter: String
+  verse: String
+}
+
+type ScriptureGroup {
+  title: String
+  scriptures: [Scripture]
+}
+
+type Teach {
+  instruction: RenderableText
+  pointsToTeach: RenderableText
+}
+
+type UserProfile {
+  id: ID
+  gender: Gender
+  firstName: String
+  lastName: String
+  email: String
+  principleStatuses: [PrincipleStatus]
+}
+
+type VideoRef {
+  title: String
+  link: String
+}
+
+schema {
+  query: Query
+  mutation: Mutation
+}

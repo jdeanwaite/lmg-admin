@@ -33,7 +33,7 @@ export default class NavBar extends Component {
 
   render() {
     return (
-      <Navbar color="primary" dark expand="md">
+      <Navbar color="primary" dark expand="md" className="NavBar">
         <NavbarBrand href="/">Learn My Gospel Admin</NavbarBrand>
         <NavbarToggler onClick={this.toggle} />
         <Collapse isOpen={this.state.isOpen} navbar>

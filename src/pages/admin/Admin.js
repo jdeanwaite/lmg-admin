@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 import SideBar from "../../components/SideBar";
-import Breadcrumbs from "../../components/Breadcrumbs";
 import PrinciplesPage from "../principles/PrinciplesPage";
 import { Redirect, Route } from "react-router-dom";
 import DashboardPage from "../dashboard/DashboardPage";
 import LessonsPage from "../lessons/LessonsPage";
-import EditPrinciplePage from "../principle/EditPrinciplePage";
 
 class Admin extends Component {
   render() {
@@ -14,8 +12,7 @@ class Admin extends Component {
       <div className="container-fluid flex-1">
         <div className="row flex-1">
           <SideBar location={location} />
-          <div className="flex-1 my-3 mx-5">
-            {/*<Breadcrumbs location={location} />*/}
+          <div className="flex-1">
             <Route
               path={match.url + "/"}
               exact
@@ -25,14 +22,8 @@ class Admin extends Component {
             />
             <Route path={match.url + "/lessons"} component={LessonsPage} />
             <Route
-              path={match.url + "/principles"}
+              path={match.url + "/principles/:id?"}
               component={PrinciplesPage}
-              exact
-            />
-            <Route
-              path={match.url + "/principles/:id"}
-              component={EditPrinciplePage}
-              exact
             />
             <Route path={match.url + "/dashboard"} component={DashboardPage} />
           </div>

@@ -2,6 +2,35 @@
 # yarn lockfile v1
 
 
+"@fortawesome/fontawesome-common-types@^0.2.0-6", "@fortawesome/fontawesome-common-types@^0.2.0-9":
+  version "0.2.0-9"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.2.0-9.tgz#96cfd9ff7bbc672c476e8566d653ec7495bb9a52"
+
+"@fortawesome/fontawesome-svg-core@^1.2.0-11":
+  version "1.2.0-11"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-1.2.0-11.tgz#b8ee99b3a078f5253623a631a122ff60a6e5bb4c"
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.2.0-6"
+
+"@fortawesome/free-regular-svg-icons@^5.1.0-11":
+  version "5.1.0-11"
+  resolved "https://registry.yarnpkg.com/@fortawesome/free-regular-svg-icons/-/free-regular-svg-icons-5.1.0-11.tgz#262c700987fd514547bbf5ecc3ebe47252a86c64"
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.2.0-9"
+
+"@fortawesome/free-solid-svg-icons@^5.1.0-11":
+  version "5.1.0-11"
+  resolved "https://registry.yarnpkg.com/@fortawesome/free-solid-svg-icons/-/free-solid-svg-icons-5.1.0-11.tgz#4a346eaada93276edb133b140492e8d7cfa2aa47"
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.2.0-9"
+
+"@fortawesome/react-fontawesome@^0.1.0-11":
+  version "0.1.0-11"
+  resolved "https://registry.yarnpkg.com/@fortawesome/react-fontawesome/-/react-fontawesome-0.1.0-11.tgz#83299a5c09bec79522abba33e93bff796f2f6d4e"
+  dependencies:
+    humps "^2.0.1"
+    prop-types "^15.5.10"
+
 "@redux-offline/redux-offline@^2.2.1":
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/@redux-offline/redux-offline/-/redux-offline-2.3.3.tgz#11a3075974a4c270aabb61452d5b9d8d0ddd391a"
@@ -238,6 +267,13 @@ apollo-link-http@^1.0.0:
     apollo-link "^1.2.2"
     apollo-link-http-common "^0.2.4"
 
+apollo-link-state@0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/apollo-link-state/-/apollo-link-state-0.4.1.tgz#65e9e0e12c67936b8c4b12b8438434f393104579"
+  dependencies:
+    apollo-utilities "^1.0.8"
+    graphql-anywhere "^4.1.0-alpha.0"
+
 apollo-link@^1.0.0, apollo-link@^1.2.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/apollo-link/-/apollo-link-1.2.2.tgz#54c84199b18ac1af8d63553a68ca389c05217a03"
@@ -249,6 +285,10 @@ apollo-link@^1.0.0, apollo-link@^1.2.2:
 apollo-utilities@^1.0.0, apollo-utilities@^1.0.12, apollo-utilities@^1.0.9:
   version "1.0.12"
   resolved "https://registry.yarnpkg.com/apollo-utilities/-/apollo-utilities-1.0.12.tgz#9e2b2a34cf89f3bf0d73a664effd8c1bb5d1b7f7"
+
+apollo-utilities@^1.0.13, apollo-utilities@^1.0.8:
+  version "1.0.13"
+  resolved "https://registry.yarnpkg.com/apollo-utilities/-/apollo-utilities-1.0.13.tgz#793c858bb42243f7254d3c2961c64a7158e51022"
 
 append-transform@^0.4.0:
   version "0.4.0"
@@ -463,16 +503,16 @@ aws-amplify@0.4.1:
     uuid "^3.2.1"
     zen-observable "^0.8.6"
 
-aws-appsync-react@1.0.13:
-  version "1.0.13"
-  resolved "https://registry.yarnpkg.com/aws-appsync-react/-/aws-appsync-react-1.0.13.tgz#9830c849e3ccba76b9548d56f1ec61353cd38925"
+aws-appsync-react@^1.0.14:
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/aws-appsync-react/-/aws-appsync-react-1.0.14.tgz#6c81c1c92057dbde4917dff6b898231989338727"
   dependencies:
-    aws-appsync "^1.0.22"
+    aws-appsync "^1.0.23"
     prop-types "^15.6.0"
 
-aws-appsync@1.0.22, aws-appsync@^1.0.22:
-  version "1.0.22"
-  resolved "https://registry.yarnpkg.com/aws-appsync/-/aws-appsync-1.0.22.tgz#6c6269456456731ade6d2289321f6cc72b933c12"
+aws-appsync@^1.0.23:
+  version "1.0.23"
+  resolved "https://registry.yarnpkg.com/aws-appsync/-/aws-appsync-1.0.23.tgz#ff663e72159e68d5fb82a521f26222b6d3732107"
   dependencies:
     "@redux-offline/redux-offline" "^2.2.1"
     apollo-cache-inmemory "^1.0.0"
@@ -1630,7 +1670,7 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
-classnames@^2.2.3:
+classnames@2.2.5, classnames@^2.2.3:
   version "2.2.5"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.5.tgz#fb3801d453467649ef3603c7d61a02bd129bde6d"
 
@@ -3301,6 +3341,12 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@^4.1.9:
   version "4.1.11"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.11.tgz#0e8bdfe4d1ddb8854d64e04ea7c00e2a026e5658"
 
+graphql-anywhere@^4.1.0-alpha.0:
+  version "4.1.11"
+  resolved "https://registry.yarnpkg.com/graphql-anywhere/-/graphql-anywhere-4.1.11.tgz#f91fa82e7e47275260957bb91f2fed5ecd508098"
+  dependencies:
+    apollo-utilities "^1.0.13"
+
 graphql-anywhere@^4.1.10:
   version "4.1.10"
   resolved "https://registry.yarnpkg.com/graphql-anywhere/-/graphql-anywhere-4.1.10.tgz#247ada0c8d85b9d5d6b37180973442ac68ff15de"
@@ -3638,6 +3684,10 @@ http-signature@~1.2.0:
 https-browserify@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/https-browserify/-/https-browserify-1.0.0.tgz#ec06c10e0a34c0f2faf199f7fd7fc78fffd03c73"
+
+humps@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/humps/-/humps-2.0.1.tgz#dd02ea6081bd0568dc5d073184463957ba9ef9aa"
 
 iconv-lite@0.4.19, iconv-lite@^0.4.17:
   version "0.4.19"
@@ -5942,7 +5992,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.1:
+prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@latest:
   version "15.6.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.1.tgz#36644453564255ddda391191fb3a125cbdf654ca"
   dependencies:

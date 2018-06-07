@@ -1,0 +1,14 @@
+.PrincipleEdit {
+  flex: 1;
+  display: flex;
+  flex-flow: column nowrap;
+
+  .edit-section {
+    margin-bottom: 24px;
+  }
+
+  .scrollable {
+    overflow: scroll;
+    flex: 1;
+  }
+}

@@ -5,21 +5,13 @@ export default {
     fragment PrincipleFull on Principle {
       id
       name
-      doctrine {
-        markdown
-      }
-      teach {
-        instruction {
-          markdown
-        }
-        pointsToTeach {
-          markdown
-        }
-      }
-      videos {
+      doctrineMarkdown
+      teachingMarkdown
+      pointsToTeachMarkdown
+      reflectPrompts
+      videoRefs {
         title
-        embedHtml
-        poster
+        link
       }
       scriptureGroups {
         title
@@ -29,17 +21,6 @@ export default {
           subBook
           chapter
           verse
-        }
-      }
-      quiz {
-        questions {
-          type
-          question
-          options {
-            id
-            text
-          }
-          correctAnswerId
         }
       }
     }
