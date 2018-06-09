@@ -11,13 +11,18 @@ class UnsavedChangesBanner extends Component {
         <div className="UpToDateBanner">
           <p>No changes.</p>
         </div>
-      )
+      );
     }
     return (
       <div className="UnsavedChangesBanner">
         <p>You have unsaved changes.</p>
-        <Button size="sm" color="white" onClick={onSaveClicked}>
-          Save
+        <Button
+          size="sm"
+          color="white"
+          onClick={onSaveClicked}
+          disabled={this.props.saving}
+        >
+          {this.props.saving ? "Saving..." : "Save"}
         </Button>
       </div>
     );
@@ -26,7 +31,8 @@ class UnsavedChangesBanner extends Component {
 
 UnsavedChangesBanner.propTypes = {
   visible: PropTypes.bool.isRequired,
-  onSaveClicked: PropTypes.func.isRequired
+  onSaveClicked: PropTypes.func.isRequired,
+  saving: PropTypes.bool
 };
 
 export default UnsavedChangesBanner;

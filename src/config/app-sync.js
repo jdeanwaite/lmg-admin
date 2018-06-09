@@ -91,7 +91,8 @@ const client = new AWSAppSyncClient({
     jwtToken: async () => {
       return (await Auth.currentSession()).getIdToken().getJwtToken();
     }
-  }
+  },
+  disableOffline: true
 });
 
 export default client;

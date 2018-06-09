@@ -4,6 +4,7 @@ export default {
   full: gql`
     fragment PrincipleFull on Principle {
       id
+      enabled
       name
       doctrineMarkdown
       teachingMarkdown
@@ -14,13 +15,12 @@ export default {
         link
       }
       scriptureGroups {
+        id
         title
         scriptures {
-          displayText
-          book
-          subBook
-          chapter
-          verse
+          id
+          text
+          link
         }
       }
     }

@@ -9,8 +9,8 @@ class ReflectPromptList extends Component {
     return (
       <div className="ReflectPromptList">
         {reflectPrompts.map((r, i) => (
-          <div className="row-nowrap">
-            <Input key={i} value={r} onChange={this._onPromptChange(i)} />
+          <div key={i} className="row-nowrap">
+            <Input value={r} onChange={this._onPromptChange(i)} />
             <Button color="danger" onClick={this._onPromptDelete(i)}>
               X
             </Button>

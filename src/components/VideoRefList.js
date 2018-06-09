@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import "./VideoRefList.css";
 import VideoRef from "./VideoRef";
 import { Button } from "reactstrap";
+import * as shortid from "shortid";
 
 class VideoRefList extends Component {
   render() {
@@ -10,13 +11,13 @@ class VideoRefList extends Component {
 
     return (
       <div className="VideoRefList">
-        {videoRefs.map((r, i) => (
+        {videoRefs.map(r => (
           <VideoRef
-            key={i}
+            key={r.id}
             videoRef={r}
-            onSubmit={this._onVideoRefSubmit(i)}
-            onChange={this._onVideoRefChange(i)}
-            onDelete={this._onVideoRefDelete(i)}
+            onSubmit={this._onVideoRefSubmit}
+            onChange={this._onVideoRefChange(r.id)}
+            onDelete={this._onVideoRefDelete(r.id)}
           />
         ))}
         <Button color="primary" onClick={this._onAddClicked}>
@@ -26,24 +27,21 @@ class VideoRefList extends Component {
     );
   }
 
-  _onVideoRefSubmit = index => {
-    return () => {
-      console.log("submitted", index);
-      this._onAddClicked();
-    };
+  _onVideoRefSubmit = () => {
+    this._onAddClicked();
   };
 
-  _onVideoRefChange = index => {
+  _onVideoRefChange = id => {
     return videoRef => {
       const videoRefs = [...this.props.videoRefs];
-      videoRefs[index] = videoRef;
+      videoRefs[videoRefs.findIndex(v => v.id === id)] = videoRef;
       this._onVideoRefsChange(videoRefs);
     };
   };
 
-  _onVideoRefDelete = index => {
+  _onVideoRefDelete = id => {
     return () => {
-      const videoRefs = this.props.videoRefs.filter((r, i) => i !== index);
+      const videoRefs = this.props.videoRefs.filter(r => r.id !== id);
       this._onVideoRefsChange(videoRefs);
     };
   };
@@ -52,6 +50,7 @@ class VideoRefList extends Component {
     const videoRefs = [
       ...this.props.videoRefs,
       {
+        id: shortid.generate(),
         title: "",
         link: ""
       }

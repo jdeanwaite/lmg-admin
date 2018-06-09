@@ -70,6 +70,7 @@ VideoRef.propTypes = {
 
 VideoRef.defaultProps = {
   videoRef: {
+    id: "1",
     title: "",
     link: ""
   }

@@ -1,0 +1,21 @@
+.ScriptureGroup {
+  padding-left: 16px;
+  border-left: 5px solid rgba(0, 0, 0, .2);
+
+  > input {
+    margin-bottom: 16px;
+  }
+
+  .actions {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    > button:not(:last-of-type) {
+      margin-right: 16px;
+    }
+  }
+
+  .scriptures {
+    padding-left: 32px;
+  }
+}

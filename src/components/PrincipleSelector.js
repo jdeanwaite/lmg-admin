@@ -44,15 +44,15 @@ class PrincipleSelector extends Component {
             </Link>
           ))}
         </div>
-        <hr />
-        <div className="order-buttons">
-          <Button color="primary" size={"sm"}>
-            Move Up
-          </Button>
-          <Button color="primary" size={"sm"}>
-            Move Down
-          </Button>
-        </div>
+        {/*<hr />*/}
+        {/*<div className="order-buttons">*/}
+          {/*<Button color="primary" size={"sm"}>*/}
+            {/*Move Up*/}
+          {/*</Button>*/}
+          {/*<Button color="primary" size={"sm"}>*/}
+            {/*Move Down*/}
+          {/*</Button>*/}
+        {/*</div>*/}
         <hr />
         <Button color="primary" onClick={this.onNewClicked}>
           New Principle

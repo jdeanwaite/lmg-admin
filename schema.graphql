@@ -23,6 +23,7 @@ type MultipleChoiceOption {
 type Mutation {
   addPrinciple(name: String!, lessonId: ID): Principle
   addLesson(name: String!): Lesson
+  updatePrinciple(id: ID!, updates: PrincipleUpdates!): Principle
 }
 
 type Principle {
@@ -35,11 +36,23 @@ type Principle {
   videoRefs: [VideoRef]
   scriptureGroups: [ScriptureGroup]
   reflectPrompts: [String]
+  enabled: Int
 }
 
 type PrincipleStatus {
   principleId: String
   health: Int
+}
+
+input PrincipleUpdates {
+  name: String
+  enabled: Int
+  doctrineMarkdown: String
+  teachingMarkdown: String
+  pointsToTeachMarkdown: String
+  reflectPrompts: [String]
+  videoRefs: [VideoRefInput]
+  scriptureGroups: [ScriptureGroupInput]
 }
 
 type Query {
@@ -64,16 +77,27 @@ type RenderableText {
 }
 
 type Scripture {
-  displayText: String
-  book: String
-  subBook: String
-  chapter: String
-  verse: String
+  id: ID
+  text: String
+  link: String
 }
 
 type ScriptureGroup {
+  id: ID
   title: String
   scriptures: [Scripture]
+}
+
+input ScriptureGroupInput {
+  id: ID
+  title: String
+  scriptures: [ScriptureInput]
+}
+
+input ScriptureInput {
+  id: ID
+  text: String
+  link: String
 }
 
 type Teach {
@@ -91,6 +115,12 @@ type UserProfile {
 }
 
 type VideoRef {
+  title: String
+  link: String
+}
+
+input VideoRefInput {
+  id: ID
   title: String
   link: String
 }
