@@ -7,7 +7,7 @@ import { ApolloProvider } from "react-apollo";
 import { withAuthenticator } from "aws-amplify-react";
 import { Rehydrated } from "aws-appsync-react";
 import NavBar from "./components/NavBar";
-import client from './config/app-sync';
+import client from "./config/app-sync";
 
 // Amplify.Logger.LOG_LEVEL = 'DEBUG'
 
@@ -18,9 +18,9 @@ Amplify.configure({
     // REQUIRED - Amazon Cognito Region
     region: "us-west-2",
     // OPTIONAL - Amazon Cognito User Pool ID
-    userPoolId: "us-west-2_y8yIMg3OB",
+    userPoolId: "us-west-2_YOcrY1Ttq",
     // OPTIONAL - Amazon Cognito Web Client ID (26-char alphanumeric string)
-    userPoolWebClientId: "r3manogk5na8dc8mroh2fm6ur",
+    userPoolWebClientId: "5qm9ffj7mi6lggsqlpfnbcp191",
     // OPTIONAL - Enforce user authentication prior to accessing AWS resources or not
     mandatorySignIn: true
   }

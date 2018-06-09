@@ -16,7 +16,7 @@ class LessonsPage extends Component {
           } else {
             const { allLessons } = data;
             return (
-              <div>
+              <div className="px-3 py-3">
                 <NewLessonModal ref={ref => (this.newLessonModal = ref)} />
                 <div className="table-header">
                   <h1>Lessons</h1>

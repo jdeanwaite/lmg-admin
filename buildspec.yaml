@@ -1,0 +1,34 @@
+version: 0.2
+env:
+    variables:
+        S3_BUCKET: "admin.learnmygospel.com"
+        BUILD_ENV: "prod"
+        DISTRIBUTION_ID: "EP3P4DQWMISQ7"
+phases:
+    install:
+        commands:
+            - echo Installing source NPM dependencies...
+            - npm i -g yarn
+            - yarn install
+            - echo '#!/bin/bash' > /usr/local/bin/build-ok; echo 'if [[ "$CODEBUILD_BUILD_SUCCEEDING" == "0" ]]; then exit 1; else exit 0; fi' >> /usr/local/bin/build-ok; chmod +x /usr/local/bin/build-ok
+    build:
+        commands:
+            - echo Build started on `date`
+            - npm run build
+    post_build:
+         commands:
+#            - build-ok && echo Removing existing files
+#            - build-ok && aws s3 rm s3://$S3_BUCKET --recursive
+            - build-ok && echo Uploading new build
+            - build-ok && aws s3 sync --delete ./build/. s3://$S3_BUCKET --acl public-read
+            - build-ok && echo Creating cloudfront invalidation
+            - build-ok && aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths "/*"
+            - echo Build completed on `date`
+cache:
+  paths:
+    - 'node_modules/**/*'
+artifacts:
+    files:
+        - '**/*'
+    base-directory: 'build*'
+    discard-paths: no
