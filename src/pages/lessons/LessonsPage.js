@@ -3,6 +3,7 @@ import AllLessonsQuery from "../../queries/AllLessonsQuery";
 import { Query } from "react-apollo";
 import { Button, Table } from "reactstrap";
 import NewLessonModal from "./NewLessonModal";
+import { Link } from "react-router-dom";
 
 class LessonsPage extends Component {
   render() {
@@ -33,7 +34,13 @@ class LessonsPage extends Component {
                   <tbody>
                     {allLessons.map(lesson => (
                       <tr key={lesson.id}>
-                        <td><a href="#">{lesson.name}</a></td>
+                        <td>
+                          <Link
+                            to={`/admin/principles/${lesson.principles[0].id}`}
+                          >
+                            {lesson.name}
+                          </Link>
+                        </td>
                       </tr>
                     ))}
                   </tbody>

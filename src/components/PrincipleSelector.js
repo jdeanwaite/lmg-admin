@@ -39,19 +39,23 @@ class PrincipleSelector extends Component {
         />
         <div className={"principle-links"}>
           {selectedLessonPrinciples.map(p => (
-            <Link key={p.id} to={`/admin/principles/${p.id}`}>
+            <Link
+              key={p.id}
+              to={`/admin/principles/${p.id}`}
+              className={p.id === selectedPrincipleId ? "active" : ""}
+            >
               {p.name}
             </Link>
           ))}
         </div>
         {/*<hr />*/}
         {/*<div className="order-buttons">*/}
-          {/*<Button color="primary" size={"sm"}>*/}
-            {/*Move Up*/}
-          {/*</Button>*/}
-          {/*<Button color="primary" size={"sm"}>*/}
-            {/*Move Down*/}
-          {/*</Button>*/}
+        {/*<Button color="primary" size={"sm"}>*/}
+        {/*Move Up*/}
+        {/*</Button>*/}
+        {/*<Button color="primary" size={"sm"}>*/}
+        {/*Move Down*/}
+        {/*</Button>*/}
         {/*</div>*/}
         <hr />
         <Button color="primary" onClick={this.onNewClicked}>

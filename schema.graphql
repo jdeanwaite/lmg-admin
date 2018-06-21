@@ -89,13 +89,13 @@ type ScriptureGroup {
 }
 
 input ScriptureGroupInput {
-  id: ID
+  id: ID!
   title: String
   scriptures: [ScriptureInput]
 }
 
 input ScriptureInput {
-  id: ID
+  id: ID!
   text: String
   link: String
 }
@@ -115,12 +115,13 @@ type UserProfile {
 }
 
 type VideoRef {
+  id: ID
   title: String
   link: String
 }
 
 input VideoRefInput {
-  id: ID
+  id: ID!
   title: String
   link: String
 }

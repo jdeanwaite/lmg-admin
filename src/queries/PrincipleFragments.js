@@ -11,6 +11,7 @@ export default {
       pointsToTeachMarkdown
       reflectPrompts
       videoRefs {
+        id
         title
         link
       }
