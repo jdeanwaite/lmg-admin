@@ -23,4 +23,10 @@
       outline: none;
     }
   }
+
+  .tab-pane.preview {
+    overflow-y: auto;
+    word-break: break-all;
+    word-wrap: break-spaces;
+  }
 }
