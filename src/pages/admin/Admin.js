@@ -10,7 +10,7 @@ class Admin extends Component {
     const { match, location } = this.props;
     return (
       <div className="container-fluid flex-1">
-        <div className="row flex-1">
+        <div className="row flex-1" style={{ flexWrap: 'nowrap' }}>
           <SideBar location={location} />
           <div className="flex-1">
             <Route

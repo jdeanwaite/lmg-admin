@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import "./MarkdownEditor.css";
 import { Nav, NavItem, NavLink, TabContent, TabPane } from "reactstrap";
 import classnames from "classnames";
-let marked = require('marked');
+import marked from "marked";
 
 class MarkdownEditor extends Component {
   state = {
@@ -13,7 +13,6 @@ class MarkdownEditor extends Component {
   render() {
     return (
       <div className="MarkdownEditor">
-
         <Nav tabs>
           <NavItem>
             <NavLink
